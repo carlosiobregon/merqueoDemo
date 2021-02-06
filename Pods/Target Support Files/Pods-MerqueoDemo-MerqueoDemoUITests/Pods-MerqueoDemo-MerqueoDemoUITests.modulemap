@@ -1,0 +1,6 @@
+framework module Pods_MerqueoDemo_MerqueoDemoUITests {
+  umbrella header "Pods-MerqueoDemo-MerqueoDemoUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
