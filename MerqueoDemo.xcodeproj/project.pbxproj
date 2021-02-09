@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		7809D645E3C401C5356DDA78 /* Pods_MerqueoDemo_MerqueoDemoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22721315E7D7BDF0B2963101 /* Pods_MerqueoDemo_MerqueoDemoUITests.framework */; };
 		8983B18D2774D60B96812F8F /* Pods_MerqueoDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E549832AE61269B0C1145E5 /* Pods_MerqueoDemoTests.framework */; };
+		D214347825D31F8200DD045F /* ConnectionStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = D214347425D31F8200DD045F /* ConnectionStatus.swift */; };
+		D214347925D31F8200DD045F /* IConnectionStatusListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = D214347525D31F8200DD045F /* IConnectionStatusListener.swift */; };
+		D214347A25D31F8200DD045F /* ProxyImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D214347625D31F8200DD045F /* ProxyImage.swift */; };
+		D214347B25D31F8200DD045F /* ProxyRest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D214347725D31F8200DD045F /* ProxyRest.swift */; };
 		D2D5595125CE38520056BE35 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D5595025CE38520056BE35 /* AppDelegate.swift */; };
 		D2D5595325CE38520056BE35 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D5595225CE38520056BE35 /* SceneDelegate.swift */; };
 		D2D5595525CE38520056BE35 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D5595425CE38520056BE35 /* ViewController.swift */; };
@@ -45,6 +49,10 @@
 		94FF3218F5CA261FA13C9FB3 /* Pods-MerqueoDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MerqueoDemoTests.release.xcconfig"; path = "Target Support Files/Pods-MerqueoDemoTests/Pods-MerqueoDemoTests.release.xcconfig"; sourceTree = "<group>"; };
 		A362DCA1D77AE1A9E1843543 /* Pods_MerqueoDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MerqueoDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B417686754426442FC8DD9B0 /* Pods-MerqueoDemo-MerqueoDemoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MerqueoDemo-MerqueoDemoUITests.release.xcconfig"; path = "Target Support Files/Pods-MerqueoDemo-MerqueoDemoUITests/Pods-MerqueoDemo-MerqueoDemoUITests.release.xcconfig"; sourceTree = "<group>"; };
+		D214347425D31F8200DD045F /* ConnectionStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionStatus.swift; sourceTree = "<group>"; };
+		D214347525D31F8200DD045F /* IConnectionStatusListener.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IConnectionStatusListener.swift; sourceTree = "<group>"; };
+		D214347625D31F8200DD045F /* ProxyImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProxyImage.swift; sourceTree = "<group>"; };
+		D214347725D31F8200DD045F /* ProxyRest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProxyRest.swift; sourceTree = "<group>"; };
 		D2D5594D25CE38520056BE35 /* MerqueoDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MerqueoDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2D5595025CE38520056BE35 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D2D5595225CE38520056BE35 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -111,8 +119,26 @@
 				F112ED7468A827DDC5092A3F /* Pods-MerqueoDemoTests.debug.xcconfig */,
 				94FF3218F5CA261FA13C9FB3 /* Pods-MerqueoDemoTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		D214347225D31F8200DD045F /* DataLayer */ = {
+			isa = PBXGroup;
+			children = (
+				D214347325D31F8200DD045F /* HTTPHelper */,
+			);
+			path = DataLayer;
+			sourceTree = "<group>";
+		};
+		D214347325D31F8200DD045F /* HTTPHelper */ = {
+			isa = PBXGroup;
+			children = (
+				D214347425D31F8200DD045F /* ConnectionStatus.swift */,
+				D214347525D31F8200DD045F /* IConnectionStatusListener.swift */,
+				D214347625D31F8200DD045F /* ProxyImage.swift */,
+				D214347725D31F8200DD045F /* ProxyRest.swift */,
+			);
+			path = HTTPHelper;
 			sourceTree = "<group>";
 		};
 		D2D5594425CE38520056BE35 = {
@@ -142,6 +168,7 @@
 			children = (
 				D2D5595025CE38520056BE35 /* AppDelegate.swift */,
 				D2D5595225CE38520056BE35 /* SceneDelegate.swift */,
+				D214347225D31F8200DD045F /* DataLayer */,
 				D2D5595425CE38520056BE35 /* ViewController.swift */,
 				D2D5595625CE38520056BE35 /* Main.storyboard */,
 				D2D5595925CE38530056BE35 /* Assets.xcassets */,
@@ -180,6 +207,7 @@
 				D2D5594925CE38520056BE35 /* Sources */,
 				D2D5594A25CE38520056BE35 /* Frameworks */,
 				D2D5594B25CE38520056BE35 /* Resources */,
+				9E78AE0FAEBBDE2BA1B0993F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -217,6 +245,7 @@
 				D2D5596A25CE38530056BE35 /* Sources */,
 				D2D5596B25CE38530056BE35 /* Frameworks */,
 				D2D5596C25CE38530056BE35 /* Resources */,
+				78ACD1EA67910F8E2F7B2F49 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -320,6 +349,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		78ACD1EA67910F8E2F7B2F49 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MerqueoDemo-MerqueoDemoUITests/Pods-MerqueoDemo-MerqueoDemoUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MerqueoDemo-MerqueoDemoUITests/Pods-MerqueoDemo-MerqueoDemoUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MerqueoDemo-MerqueoDemoUITests/Pods-MerqueoDemo-MerqueoDemoUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		9D76A621D18949D3609662AA /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -340,6 +386,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9E78AE0FAEBBDE2BA1B0993F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MerqueoDemo/Pods-MerqueoDemo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MerqueoDemo/Pods-MerqueoDemo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MerqueoDemo/Pods-MerqueoDemo-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		DCEB22CD27DB57A995384E25 /* [CP] Check Pods Manifest.lock */ = {
@@ -372,7 +435,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				D2D5595525CE38520056BE35 /* ViewController.swift in Sources */,
+				D214347925D31F8200DD045F /* IConnectionStatusListener.swift in Sources */,
+				D214347825D31F8200DD045F /* ConnectionStatus.swift in Sources */,
 				D2D5595125CE38520056BE35 /* AppDelegate.swift in Sources */,
+				D214347B25D31F8200DD045F /* ProxyRest.swift in Sources */,
+				D214347A25D31F8200DD045F /* ProxyImage.swift in Sources */,
 				D2D5595325CE38520056BE35 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
