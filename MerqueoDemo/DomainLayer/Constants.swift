@@ -36,11 +36,3 @@ struct Constants {
     static let API_KEY = "2ea5adc47456e674399d947d032e74e5";
     static let PROGRESS_INDICATOR_VIEW_TAG:Int = 10
 }
-
-
-struct ParamsToPopularMovies: Encodable {
-    let api_key: String
-    let language: String?
-    let page: String?
-    let region: String?
-}

@@ -83,4 +83,3 @@ class ProxyRest <T: Decodable> {
     
 }
 
-
