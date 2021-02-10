@@ -16,15 +16,10 @@ class PopularMoviesInteractor: IPopularMoviesPresenterToInteractor {
     var disposeBag: DisposeBag? = DisposeBag()
     var atPage: Int = .zero
     var atLastPage = false
-    let preferredLocale = Locale.current
     
     func fetchPopularMovies() {
         atPage += 1
-        let params = ParamsToPopularMovies(api_key: Constants.API_KEY,
-                                           language: preferredLocale.languageCode,
-                                           page: "\(atPage)",
-                                           region: preferredLocale.regionCode)
-        RepoWebMovies.getPopularMovies(iResponder: self, params: params)
+        RepoWebMovies.getPopularMovies(iResponder: self, page: atPage)
     }
  
 }
