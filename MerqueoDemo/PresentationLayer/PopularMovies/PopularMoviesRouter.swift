@@ -12,7 +12,8 @@ class PopularMoviesRouter: IPopularMoviesPresenterToRouter {
     
     static func createModule() -> PopularMoviesViewController {
         
-        let view = mainstoryboard.instantiateViewController(withIdentifier: "MyViewController") as! PopularMoviesViewController
+        guard let view = mainstoryboard.instantiateViewController(withIdentifier: "PopularMovieController") as? PopularMoviesViewController
+        else { return PopularMoviesViewController() }
         
         let presenter: IPopularMoviesViewToPresenter & IPopularMoviesInteractorToPresenter = PopularMoviesPresenter()
         let interactor: IPopularMoviesPresenterToInteractor = PopularMoviesInteractor()
@@ -30,6 +31,15 @@ class PopularMoviesRouter: IPopularMoviesPresenterToRouter {
     
     static var mainstoryboard: UIStoryboard {
         return UIStoryboard(name:"Main",bundle: Bundle.main)
+    }
+    
+    func pushToMovieScreen(idMovie: String, view: MovieDetailViewController) {
+        let presenter = MovieDetailPresenter(movieId: idMovie)
+        let interactor: IMovieDetailPresenterToInteractor = MovieDetailInteractor()
+        view.presenter = presenter
+        presenter.view = view
+        presenter.interactor = interactor
+        interactor.presenter = presenter
     }
     
 }
