@@ -33,7 +33,7 @@ class ProxyImage {
             let movieImage = MovieImage(id: name, image: response.value)
             responder.onRetrievedData(response: movieImage, serviceTag: serviceTag, fromWeb: true)
         default:
-            responder.onFail(message: response.error!, serviceTag: serviceTag, fromWeb: true)
+            responder.onFail(message: response.error, serviceTag: serviceTag, fromWeb: true)
         }
     }
 }

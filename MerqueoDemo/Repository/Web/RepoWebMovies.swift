@@ -24,5 +24,21 @@ class RepoWebMovies {
         
     }
     
+    static func getMovieDetail(iResponder: IRepositoryResponse, id: String) {
+        
+        let params = ParamsToMovieDetail(api_key: Constants.API_KEY)
+        let queryParams = JSONParser.object2QueryParams(object: params) ?? String()
+        let path = "\(Constants.EndPoints.PATH_MOVIE_DETAIL)\(id)?\(queryParams)"
+        
+        ProxyRest<MovieDetailResponse>.execute(
+            path: path,
+            methodType: Constants.HTTPMethod.GET,
+            responder: iResponder,
+            serviceTag: Constants.ServiceTag.GET_MOVIE_DETAIL,
+            body: NilBody()
+        )
+        
+    }
+    
 }
 

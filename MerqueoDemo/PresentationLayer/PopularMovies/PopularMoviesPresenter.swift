@@ -36,6 +36,11 @@ class PopularMoviesPresenter: IPopularMoviesViewToPresenter, IPopularMoviesInter
         interactor?.fetchPopularMovies()
     }
     
+    func showMovieDetail(at index: Int, view: MovieDetailViewController) {
+        let movie = popularMovies[index]
+        router?.pushToMovieScreen(idMovie: movie.id, view: view)
+    }
+    
     //  MARK: - IPopularMoviesInteractorToPresenter
     func moviesFetchedSuccess(newPopularMovies: [Movie]) {
         DispatchQueue.main.async {

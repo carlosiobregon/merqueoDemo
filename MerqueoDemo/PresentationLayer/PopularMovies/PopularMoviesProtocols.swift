@@ -16,15 +16,17 @@ protocol IPopularMoviesViewToPresenter: class {
     func fetchPopularMovies()
     func loadMorePopularMovies()
     func configureCell(_ cell: MovieCollectionViewCell, forItemAt: Int)
+    func showMovieDetail(at index: Int, view: MovieDetailViewController)
 }
 
-protocol IPopularMoviesPresenterToView: class {
+protocol IPopularMoviesPresenterToView: UIViewController {
     func showPopularMovies(didAddItemsAt indexes: IndexSet)
     func showError()
 }
 
 protocol IPopularMoviesPresenterToRouter: class {
     static func createModule()-> PopularMoviesViewController
+    func pushToMovieScreen(idMovie: String, view: MovieDetailViewController)
 }
 
 protocol IPopularMoviesPresenterToInteractor: class {

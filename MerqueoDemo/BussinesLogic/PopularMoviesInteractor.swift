@@ -10,7 +10,7 @@ import Alamofire
 import RxSwift
 
 
-class PopularMoviesInteractor: IPopularMoviesPresenterToInteractor{
+class PopularMoviesInteractor: IPopularMoviesPresenterToInteractor {
     
     var presenter: IPopularMoviesInteractorToPresenter?
     var disposeBag: DisposeBag? = DisposeBag()

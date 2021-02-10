@@ -13,3 +13,7 @@ struct ParamsToPopularMovies: Encodable {
     let page: String?
     let region: String?
 }
+
+struct ParamsToMovieDetail: Encodable {
+    let api_key: String
+}

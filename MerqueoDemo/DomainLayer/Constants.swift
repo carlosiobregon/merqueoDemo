@@ -12,7 +12,8 @@ struct Constants {
         case
         FAIL,
         GET_POPULAR_MOVIES,
-        GET_MOVIE_IMAGE
+        GET_MOVIE_IMAGE,
+        GET_MOVIE_DETAIL
     }
     enum HTTPMethod{
         case
@@ -24,6 +25,7 @@ struct Constants {
         static let BASE_URL = "http://api.themoviedb.org/3"
         static let BASE_URL_RESOURCES = "http://image.tmdb.org/t/p/w500";
         static let PATH_POPULAR_MOVIES = "/movie/popular?"
+        static let PATH_MOVIE_DETAIL = "/movie/"
     }
     
     struct HTTPStatusCode {

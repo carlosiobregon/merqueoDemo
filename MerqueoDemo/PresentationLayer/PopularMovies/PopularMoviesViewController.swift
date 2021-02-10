@@ -41,9 +41,14 @@ class PopularMoviesViewController: UIViewController {
         uiCollectionView.delegate = self
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        presenter = nil
+    
+    //    MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "popularmovies_2_moviedetails",
+           let detailView = segue.destination as? MovieDetailViewController,
+           let index = sender as? Int {
+            presenter?.showMovieDetail(at: index, view: detailView)
+        }
     }
 
 }
@@ -92,6 +97,11 @@ extension PopularMoviesViewController: UICollectionViewDataSource {
         }
         
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        uiCollectionView.deselectItem(at: indexPath, animated: true)
+        performSegue(withIdentifier: "popularmovies_2_moviedetails", sender: indexPath.row)
     }
 }
 
