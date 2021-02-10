@@ -1,6 +1,4 @@
 # merqueoDemo
-<<<<<<< HEAD
-=======
 
 iOS developer test
 
@@ -11,4 +9,4 @@ Permitiendo:
 ● La visualización de la información de las películas más populares en el servidor de
 TMDb.
 ● Acceder al detalle de la película.
->>>>>>> aeb4e8bac85f64b4ff5e67ccb934f77ba940a009
+
