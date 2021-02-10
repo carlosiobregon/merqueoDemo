@@ -9,7 +9,12 @@ import Foundation
 
 class RepoWebMovies {
     
-    static func getPopularMovies(iResponder: IRepositoryResponse, params: ParamsToPopularMovies) {
+    static func getPopularMovies(iResponder: IRepositoryResponse, page: Int) {
+        
+        let params = ParamsToPopularMovies(api_key: Constants.API_KEY,
+                                           language: Locale.current.languageCode,
+                                           page: "\(page)",
+                                           region: Locale.current.regionCode)
         
         let queryParams = JSONParser.object2QueryParams(object: params) ?? String()
         let path = "\(Constants.EndPoints.PATH_POPULAR_MOVIES)\(queryParams)"
@@ -26,7 +31,10 @@ class RepoWebMovies {
     
     static func getMovieDetail(iResponder: IRepositoryResponse, id: String) {
         
-        let params = ParamsToMovieDetail(api_key: Constants.API_KEY)
+        let params = ParamsToPopularMovies(api_key: Constants.API_KEY,
+                                           language: Locale.current.languageCode,
+                                           page: nil,
+                                           region: Locale.current.regionCode)
         let queryParams = JSONParser.object2QueryParams(object: params) ?? String()
         let path = "\(Constants.EndPoints.PATH_MOVIE_DETAIL)\(id)?\(queryParams)"
         
